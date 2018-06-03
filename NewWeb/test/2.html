@@ -1,0 +1,35 @@
+<!DOCTYPE>
+   2: <html lang="zh-en">
+   3: <head>
+   4:     <title>js实现简单留言板</title>
+   5:     <meta http-equiv="content-type" content="text/html;charset=utf-8">
+   6:     <link rel="stylesheet" type="text/css" href="./forum.css">
+   7:     <script type="text/javascript" src="./forum.js"></script>
+   8: </head>
+   9: <body>
+  10:     <div class="container">
+  11:         <div class="content">
+  12:             <!-- <form action="?" method="?"> -->
+  13:                 <div class="text">
+  14:                     <label for="message">js简单留言板(置空可以查看默认的留言内容)</label>
+  15:                 </div>
+  16:                 <div class="text" style="margin-left:-75px">
+  17:                     <label for="name">昵称：</label>
+  18:                     <input type="text" id="name" value="昵称(默认是dwqs)" class="txt">
+  19:                 </div>
+  20:                 <div class="text">
+  21:                     <textarea rows="5" cols="30" id="message" value="" class="txt">给我留言(默认留言内容：我的小站：www.ido321.com)</textarea>
+  22:                 </div>
+  23:                 <div class="btn">
+  24:                     <!-- <input type="submit" id="submit" value="提交留言"> -->
+  25:                     <button id="btn1">提交留言</button>
+  26:                 </div>
+  27:             <!-- </form> -->
+  28:         </div>
+  29:         <h3 style="clear:right">留言列表</h3>
+  30:         <hr/>
+  31:         <div class="messageList" id="messageList">
+  32:         </div>
+  33:     </div>
+  34: </body>
+  35: </html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MEDIA_map</title>
+    <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="../_css/jquery-ui.min.css">
+    <script src="../_js/jquery.min.js"></script>
+    <script src="../_js/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function() {
+            $(document).tooltip({
+                track: true
+            });
+        });
+    </script>
+
+    <style>
+        #wrapper {
+            margin: 0, auto;
+            font-family: "微軟正黑體", Arial, Helvetica, sans-serif;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            border: none
+        }
+
+        body {
+            background-color: rgba(0, 0, 0, 0.85);
+            background-image: url(pic/black_worldmap.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .position {
+            position: absolute;
+            width: 1.5%;
+            cursor: crosshair;
+        }
+
+        .position:hover {
+            width: 20%;
+            background-image: url(/pic/map.jpg) no-repeat;
+        }
+
+        /*.mar {
+            color: white;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }*/
+
+        label {
+            display: inline-block;
+            width: 5em;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="wrapper">
+       
+        <div id="pos">
+            <a href="blackboy.html" onMouseOut="document.A1.src='pic/position_dark.png'" onMouseOver="document.A1.src='pic/news/kid.png'"><img class="position" id="a1" src="pic/position_dark.png" name="A1" alt="" style="opacity:0.8; top: 43%; left: 27%;" title="Chicago CBS Affiliate Makes 4-yr.-old Sound Like a Thug"></a>
+            
+            <a href="price.html" onMouseOut="document.A3.src='pic/position_dark.png'" onMouseOver="document.A3.src='pic/pricetrue.png'"><img class="position" id="a3" src="pic/position_dark.png" name="A3" alt="" style="opacity:0.8; top: 47%; left: 23%;" title="Trump health secretary to repay cost of private jet travel."></a>
+            <a href="girl.html" onMouseOut="document.A4.src='pic/position_dark.png'" onMouseOver="document.A4.src='pic/girltrue.png'"><img class="position" id="a4" src="pic/position_dark.png" name="A4" alt="" style="opacity:0.8; top: 76%; left: 33%;" title="Little Girl Have a ‘Joker Smile’ Carved Into Her Face in South Africa"></a>
+            <a href="japan.html" onMouseOut="document.A5.src='pic/position_dark.png'" onMouseOver="document.A5.src='pic/japan.png'"><img class="position" id="a5" src="pic/position_dark.png" name="A5" alt="" style="opacity:0.8; top: 50%; left: 78%;" title="It is illegal to be fat in japan"></a>
+            <a href="hospital.html" onMouseOut="document.A6.src='pic/position_red.png'" onMouseOver="document.A6.src='pic/hospital.png'"><img class="position" id="a6" src="pic/position_red.png" name="A6" alt="" style="opacity:0.8; top: 56.5%; left: 74%;" title="Young boy witnessing a case of murder"></a>
+            <a href="woman.html" onMouseOut="document.A7.src='pic/position_dark.png'" onMouseOver="document.A7.src='pic/womann.png'"><img class="position" id="a7" src="pic/position_dark.png" name="A7" alt="" style="opacity:0.8; top: 45%; left: 65%;" title="A woman abandoned her son on the street because her partner asked her"></a>
+            
+        </div>
+
+
+    </div>
+
+    <!--<div class="mar">
+            <marquee bgcolor="#000000" onMouseOver="this.stop()" onMouseOut="this.start()">顯示內容</marquee>
+        </div>-->
+</body>
+
+
+</html>

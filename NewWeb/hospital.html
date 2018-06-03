@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MEDIA_response</title>
+    <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
+
+
+
+    <style>
+        #abgne-block-20120110 {
+            width: 900px;
+            /* .showbox 的寬 + .link li a img 的寬 + .link li a img 的邊框寬度 * 2 + .triangle 的 border-left 寬度 + 自訂的間距 */
+            height: 470px;
+            /* (.link li img 的高 + .link li img 的 border-width * 2 + .link li img 的 margin-bottom) * .link li 的數量 -  .link li img 的 margin-bottom */
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #abgne-block-20120110 ul,
+        #abgne-block-20120110 ul li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        #abgne-block-20120110 a {
+            outline: none;
+        }
+        
+        #abgne-block-20120110 img {
+            height: 470px;
+            width: 690px;
+            border: none;
+            margin-top: 1px;
+            vertical-align: middle;
+        }
+        
+        #abgne-block-20120110 .link li a {
+            position: relative;
+            display: block;
+            width: 184px;
+        }
+        
+        #abgne-block-20120110 .link li a img {
+            width: 100px;
+            height: 80px;
+            /* ($adblock 的高 + margin-bottom) / .link li 的數量 - .link li img 的 border-width * 2 + .link li img 的 margin-bottom */
+            margin-bottom: 1px;
+            border: 1px solid #ffffff;
+        }
+        
+        #abgne-block-20120110 .link {
+            position: absolute;
+            left: 0;
+        }
+        
+        #abgne-block-20120110 .showbox {
+            position: absolute;
+            right: 10%;
+            height: 470px;
+            /* 圖片高度 */
+            width: 700px;
+            /* 圖片寬度 */
+            border: 1px solid #f00;
+        }
+        
+        #abgne-block-20120110 .link li.on a img {
+            border: 2px solid #f00;
+        }
+        
+        #abgne-block-20120110 .link li.on .triangle {
+            width: 0;
+            height: 0;
+            font-size: 0;
+            line-height: 0;
+            border-top: 10px solid transparent;
+            /* ie6 不支援 transparent, 可以把它改成跟背景一樣的顏色 */
+            border-bottom: 10px solid transparent;
+            /* ie6 不支援 transparent, 可以把它改成跟背景一樣的顏色 */
+            border-left: 10px solid #f00;
+            /* 三角形箭頭的大小及顏色 */
+            position: absolute;
+            top: 37px;
+            /* (.link li a img 的高 + .link li img 的 border-width * 2 + .link li img 的 margin-bottom -  border-top 的寬 - border-bottom 的寬) / 2 */
+        }
+        
+        #wrapper {
+            margin: 0, auto;
+            font-family: "微軟正黑體", Arial, Helvetica, sans-serif;
+            max-width: 1500px;
+            max-height: 700px;
+        }
+        
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            border: none;
+        }
+        
+        body {
+            background-color: rgba(0, 0, 0, 0.85);
+            /*background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: top;*/
+            background-size: cover;
+        }
+        
+        .row {
+            padding-top: 3.5%;
+            max-width: 1500px;
+            max-height: auto;
+        }
+        
+        #left {
+            padding-left: 8%;
+        }
+        
+        #right {}
+        
+        h2,
+        p {
+            color: azure;
+            word-break: break-all;
+        }
+        
+        .news_words {
+            position: absolute;
+            width: 70%;
+        }
+        /*message board*/
+        
+        textarea {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: white;
+            position: absolute;
+            display: block;
+            width: 350px;
+            /*width: 50%;*/
+            margin-top: 122%;
+            border: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        input {
+            /*button*/
+            background-color: rgba(145, 145, 145, 0.8);
+            color: white;
+            position: absolute;
+            display: block;
+            height: 44px;
+            margin-top: 122%;
+            margin-left: 70.5%;
+            border: none;
+            opacity: 0.6;
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+        }
+        
+        input:hover {
+            opacity: 1;
+        }
+        
+        li {
+            padding: 5px 10px;
+            position: relative;
+            word-break: break-all;
+        }
+        
+        .red {
+            color: pink;
+            /*background: #fff;*/
+        }
+        
+        .pink {
+            color: rgba(183, 228, 245);
+            /*background: #ccc;*/
+        }
+        
+        A {
+            position: absolute;
+            right: 0;
+            top: -20px;
+           
+            color: #fff;
+        }
+        
+        #list {
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font: 12px/26px "微軟正黑體";
+            color: azure;
+            width: 400px;
+            height: 605px;
+            overflow: auto;
+            left: 1;
+        }
+        
+        .clos {
+            position: absolute;
+            /*right: -50px;*/
+            width: 45px;
+            color: rgba(255, 0, 0, 0.80);
+            background: #fff;
+            text-decoration: none;
+            text-align: center;
+            right: 0;
+        }
+        
+        .clos:hover {
+            text-decoration: none;
+            color: #fff;
+            background: rgba(255, 0, 0, 0.80);
+        }
+        /*美化卷軸*/
+        
+         ::-webkit-scrollbar {
+            width: 3px;
+        }
+        /*Track*/
+        
+         ::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+        }
+        /* Handle*/
+        
+         ::-webkit-scrollbar-thumb {
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255);
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+        }
+        
+        #map {
+            position: fixed;
+            opacity: 0.8;
+            width: 35px;
+            left: 0;
+            top: 0;
+        }
+        
+        #map:hover {
+            opacity: 1;
+        }
+        
+        #allseeingeye {
+            position: fixed;
+            opacity: 0.8;
+            width: 35px;
+            right: 0;
+            top: 0;
+        }
+        
+        #allseeingeye:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<body>
+    <div id="wrapper">
+
+        <div id="menu">
+            <a href="map.html"><img id="map" src="/pic/icons8-world-map-100.png" alt=""></a>
+
+            <a href="hospitaltrue.html"><img id="allseeingeye" src="/pic/icons8-illuminati-symbol-100.png" alt=""></a>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8" id="left">
+                <iframe width="80%" height="480" src="https://www.youtube.com/embed/Y3_QDUquZAo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+                <div class="news_words" style="padding-top: 3%;">
+                    <h2>Young boy witnessing a case of murder.</h2>
+                    <p>A young boy walking by the street,playing his cell phone,<br>suddenly heard the scream from the convience store which across the street,and a stranger whose hand was stained with blood looking extremely nervous just run out from the store. <br>Without figured out the whole thing and the details,the boy thought there's something wrong <br>so he try to take some photo,upload it to the facebook,and here's what he found.<br></p>
+                </div>
+            </div>
+
+            <div class="col-md-4" id="right">
+                <ul id="list"></ul>
+                <textarea id="text"></textarea>
+                <input type="button" value="Send">
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+<script>
+    $(function() {
+        // 先取得相關的區塊及預設要先顯示那一個
+        var $block = $('#abgne-block-20120110'),
+            $link = $block.find('.link li'),
+            $showBox = $block.find('.showbox'),
+            _default = 0;
+
+        // 幫 $link a 加入一個 span.triangle, 用來產生三角形用
+        $link.find('a').append('<span class="triangle"></span>');
+
+        // 當滑鼠移到 $link 上時
+        $link.mouseover(function() {
+            var $this = $(this);
+
+            // 修改 $showBox 中的超連結及圖片
+            $showBox.html('<a href="' + $this.find('a').attr('href') + '"><img src="' + $this.find('img').attr('src') + '" /></a>');
+            // 幫被滑鼠移上去的 li 加上 .on
+            $this.addClass('on').siblings('.on').removeClass('on');
+        }).click(function() {
+            // 如果是點擊到 $link 時則取消連結功能
+            return false;
+        }).eq(_default).mouseover();
+    });
+
+    window.onload = function() {
+        var btn = document.querySelector('input');
+        var text = document.querySelector('textarea');
+        var list = document.querySelector('#list');
+        var colors = ["red", "pink"];
+        var nub = 0;
+        btn.onclick = function() {
+            if (text.value.trim() == "") {
+                alert("請輸入留言");
+                return false;
+            }
+
+            var li = document.createElement("li");
+            li.innerHTML = text.value;
+
+            // li.className = colors[nub%colors.length];
+            /* 判断a標籤已经被添加，就讓a標籤顯示出来，否則就添加 */
+            if (list.children[0] && list.children[0].className == "red") {
+                li.className = "pink";
+            } else {
+                li.className = "red";
+            }
+
+            var A = null;
+            li.onmouseover = function() {
+                if (A) {
+                    A.style.display = "block";
+                } else {
+                    A = document.createElement("A");
+                    A.href = "javascript:;";
+                    A.className = "clos";
+                    A.innerHTML = "Delete";
+                    A.onclick = function() {
+                        list.removeChild(this.parentNode);
+                    };
+                    this.appendChild(A);
+                }
+            };
+
+            li.onmouseout = function() {
+                A.style.display = "none";
+            };
+
+            list.insertBefore(li, list.children[0]);
+            /*li.insertAfter(list.children[0]);*/
+            text.value = "";
+            nub++;
+        };
+    };
+</script>
+
+</html>

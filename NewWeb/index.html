@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MEDIA_index</title>
+    <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="../_css/jquery-ui.min.css">
+    <script src="../_js/jquery.min.js"></script>
+    <script src="../_js/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+
+    <style>
+        #wrapper {
+            margin: 0, auto;
+            font-family: "微軟正黑體", Arial, Helvetica, sans-serif;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            border: none
+        }
+
+       
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url(pic/index.png), url(pic/busy4.jpg);
+            background-repeat: no-repeat;
+            background-attachment: local;
+            background-position: center;
+            background-size: cover;
+            animation-name: move;
+            animation-duration: 20s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+
+        @keyframes move {
+            0%,
+            100% {
+                background-position: right;
+            }
+            50% {
+                background-position: left;
+            }
+        }
+        
+        button{
+            font-family: "BASKVILL", Arial, Helvetica, sans-serif;
+            background-color:rgba(255, 255, 255, 0);
+            border: none;
+            color: white;
+            text-shadow: 0px 0px 10px #fff, 0px 0px 10px #fff;
+            margin-top: 50%;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        
+        
+        <a href="map.html"><button>Media</button></a>
+
+        
+    </div>
+</body>
+
+
+
+</html>

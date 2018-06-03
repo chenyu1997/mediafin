@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MEDIA_response</title>
+    <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
+
+    <script type="text/javascript">
+        window.onload = function() {
+            var btn = document.querySelector('input');
+            var text = document.querySelector('textarea');
+            var list = document.querySelector('#list');
+            var colors = ["red", "pink"];
+            var nub = 0;
+            btn.onclick = function() {
+                if (text.value.trim() == "") {
+                    alert("請輸入留言");
+                    return false;
+                }
+
+                var li = document.createElement("li");
+                li.innerHTML = text.value;
+
+                // li.className = colors[nub%colors.length];
+                /* 判断a標籤已经被添加，就讓a標籤顯示出来，否則就添加 */
+                if (list.children[0] && list.children[0].className == "red") {
+                    li.className = "pink";
+                } else {
+                    li.className = "red";
+                }
+
+                var A = null;
+                li.onmouseover = function() {
+                    if (A) {
+                        A.style.display = "block";
+                    } else {
+                        A = document.createElement("A");
+                        A.href = "javascript:;";
+                        A.className = "clos";
+                        A.innerHTML = "Delete";
+                        A.onclick = function() {
+                            list.removeChild(this.parentNode);
+                        };
+                        this.appendChild(A);
+                    }
+                };
+
+                li.onmouseout = function() {
+                    A.style.display = "none";
+                };
+
+                list.insertBefore(li, list.children[0]);
+                /*li.insertAfter(list.children[0]);*/
+                text.value = "";
+                nub++;
+            };
+        };
+    </script>
+
+    <style>
+        #wrapper {
+            margin: 0, auto;
+            font-family: "微軟正黑體", Arial, Helvetica, sans-serif;
+            max-width: 1500px;
+            max-height: 700px;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            border: none;
+        }
+
+        body {
+            background-color: #fff;
+            /*background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: top;*/
+            background-size: cover;
+        }
+
+        .row {
+            padding-top: 3.5%;
+            max-width: 1500px;
+            max-height: auto;
+        }
+
+        #left {
+            padding-left: 8%;
+        }
+
+        #right {}
+
+        h2,
+        p {
+            color: rgba(0, 0, 0, 0.7);
+            word-break: break-all;
+        }
+
+        .news_words {
+            position: absolute;
+            width: 70%;
+        }
+
+        /*message board*/
+
+        textarea {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: rgba(0, 0, 0, 0.7);
+            position: absolute;
+            display: block;
+            width: 350px;
+            /*width: 50%;*/
+            margin-top: 122%;
+            border: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        input {
+            /*button*/
+            background-color: rgba(145, 145, 145, 0.8);
+            color: white;
+            position: absolute;
+            display: block;
+            height: 44px;
+            margin-top: 122%;
+            margin-left: 70.5%;
+            border: none;
+            opacity: 0.6;
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+        }
+
+        input:hover {
+            opacity: 1;
+        }
+
+        li {
+            padding: 5px 10px;
+            position: relative;
+            word-break: break-all;
+        }
+
+        .red {
+            color: #ff4566;
+            /*background: #fff;*/
+        }
+
+        .pink {
+            color: #1f75ff;
+            /*background: #ccc;*/
+        }
+
+       
+
+        #list {
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font: 12px/26px "微軟正黑體";
+            color: rgba(0, 0, 0, 0.7);
+            width: 400px;
+            height: 605px;
+            overflow: auto;
+            left: 1;
+        }
+
+        .clos {
+            position: absolute;
+            /*right: -50px;*/
+            width: 45px;
+            color: rgba(255, 0, 0, 0.80);
+            background: #fffdd6;
+            text-decoration: none;
+            text-align: center;
+            right: 0;
+        }
+
+        .clos:hover {
+            text-decoration: none;
+            color: #fff;
+            background: rgba(255, 0, 0, 0.80);
+        }
+       
+        /*美化卷軸*/
+
+        ::-webkit-scrollbar {
+            width: 3px;
+        }
+        
+         /*Track*/ 
+        ::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+        }
+
+        /* Handle*/ 
+
+        ::-webkit-scrollbar-thumb {
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255);
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+        }
+
+        #map {
+            position: fixed;
+            opacity: 0.8;
+            width: 35px;
+            left: 0;
+            top: 0;
+        }
+
+        #map:hover {
+            opacity: 1;
+        }
+
+        #allseeingeye {
+            position: fixed;
+            opacity: 0.8;
+            width: 35px;
+            right: 0;
+            top: 0;
+        }
+
+        #allseeingeye:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <div id="menu">
+            <a href="map.html"><img id="map" src="/pic/icons8-world-map-100.png" alt=""></a>
+
+            <a href="blackboy.html"><img id="allseeingeye" src="/pic/inverse_icons8-illuminati-symbol-100.png" alt=""></a>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8" id="left">
+                <div id="imgbox">
+                    <iframe width="80%" height="480" src="https://www.youtube.com/embed/cmaNAbfbZr0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+
+                <div class="news_words" style="padding-top: 3%;">
+                    <h2>Chicago CBS Affiliate Makes 4-yr.-old Sound Like a Thug.</h2>
+                    <p>However, an unedited version of the interview shows the boy’s words
+
+were taken completely out of context. It turns out he wants a gun because he wants to
+
+become a police officer.<br><a href="https://www.colorlines.com/articles/chicago-cbs-affiliate-makes-4-yr-old-sound-thug-says-sorry">Source</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4" id="right">
+                <ul id="list"></ul>
+                    <textarea id="text" disabled="disabled"></textarea>
+                    <input type="button" value="Send" disabled="disabled">
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js "></script>
+</body>
+
+</html>
