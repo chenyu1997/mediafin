@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>Media_True</title>
+    <title>MEDIA_response</title>
+    <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
 
-   <script type="text/javascript">
+    <script type="text/javascript">
         var Storage = {
             saveData: function() //保存數據 
             {
@@ -69,69 +70,66 @@
             } //清空所有已保存的數據*/
         }
 
+       
     </script>
-   
+
     <style>
+        #wrapper {
+            margin: 0, auto;
+            font-family: "微軟正黑體", Arial, Helvetica, sans-serif;
+            max-width: 1500px;
+            max-height: 700px;
+        }
+
+        html,
         body {
             margin: 0;
-            background-color: #fff;
+            padding: 0;
+            height: 100%;
+            border: none;
+        }
+
+        body {
+            background-color: rgba(0, 0, 0, 0.85);
+            /*background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: top;*/
             background-size: cover;
         }
 
-        #container {
-            max-width: 1200px;
-            margin: 0 auto;
-            font-family: "微軟正黑體", Arial, Helvetica, sans-serif;
-        }
-
-        #header {
-            width: 1200px;
-            min-height: 30px;
-        }
-
-        #main {
-            min-width: 1200px;
-            float: left;
+        .row {
+            padding-top: 3.5%;
+            max-width: 1500px;
+            max-height: auto;
         }
 
         #left {
-            margin: 0 auto;
-            padding-left: 0px;
-            min-width: 700px;
-            min-height: 729px;
-            float: left;
+            padding-left: 8%;
         }
 
-        #right {
-            margin: 0 auto;
-            min-width: 500px;
-            min-height: 729px;
-            float: left;
-        }
-        
+        #right {}
+
         h2,
         p {
-            color: rgba(0, 0, 0, 0.7);
+            color: azure;
             word-break: break-all;
         }
 
         .news_words {
             position: absolute;
-            width: 600px;
+            width: 70%;
         }
 
         /*message board*/
 
         textarea {
             background-color: rgba(255, 255, 255, 0.05);
-            color: rgba(0, 0, 0, 0.7);
+            color: white;
             position: absolute;
             display: block;
             width: 350px;
-            height: 40px;
             /*width: 50%;*/
-            margin-top: 650px;
-            margin-left: 100px;
+            margin-top: 122%;
             border: none;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
@@ -143,8 +141,8 @@
             position: absolute;
             display: block;
             height: 44px;
-            margin-top: 650px;
-            margin-left: 460px;
+            margin-top: 122%;
+            margin-left: 70.5%;
             border: none;
             opacity: 0.6;
             box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
@@ -171,21 +169,59 @@
         #clearBt:hover {
             opacity: 1;
         }
+        
+        /*li {
+            padding: 5px 10px;
+            position: relative;
+            word-break: break-all;
+        }
+
+        .red {
+            color: pink;
+        }
+
+        .pink {
+            color: rgba(183, 228, 245);
+        }
+
+        A {
+            position: absolute;
+            right: 0;
+            top: -20px;
+            color: #fff;
+        }*/
 
         #list {
             position: absolute;
             margin: 0;
-            margin-left: 100px;
             padding: 0;
             list-style: none;
             font: 12px/26px "微軟正黑體";
-            color: rgba(0, 0, 0, 0.7);
+            color: azure;
             width: 400px;
             height: 605px;
             overflow: auto;
             left: 1;
         }
-        
+
+        .clos {
+            position: absolute;
+            top: 0;
+            width: 45px;
+            color: rgba(255, 0, 0, 0.80);
+            background: #fff;
+            padding: 5px 0;
+            text-decoration: none;
+            text-align: center;
+            right: 0;
+        }
+
+        .clos:hover {
+            text-decoration: none;
+            color: #fff;
+            background: rgba(255, 0, 0, 0.80);
+        }
+
         /*美化卷軸*/
 
         ::-webkit-scrollbar {
@@ -210,11 +246,9 @@
         }
 
         #map {
-            z-index: 0;
             position: fixed;
             opacity: 0.8;
             width: 35px;
-            height: 35px;
             left: 0;
             top: 0;
         }
@@ -224,11 +258,9 @@
         }
 
         #allseeingeye {
-            z-index: 0;
             position: fixed;
             opacity: 0.8;
             width: 35px;
-            height: 35px;
             right: 0;
             top: 0;
         }
@@ -240,36 +272,40 @@
 </head>
 
 <body>
-    <div id="container">
-        <div id="header">
-            <a href="map.html"><img id="map" src="/pic/map.png" alt=""></a>
+    <div id="wrapper">
 
-            <a href="price.html"><img id="allseeingeye" src="/pic/inverse_illuminati.png" alt=""></a>
+        <div id="menu">
+            <a href="map.html"><img id="map" src="/pic/icons8-world-map-100.png" alt=""></a>
+
+            <a href="true.html"><img id="allseeingeye" src="/pic/icons8-illuminati-symbol-100.png" alt=""></a>
         </div>
-        
-        <div id="main">
-            <div id="left">
+
+        <div class="row">
+            <div class="col-md-8" id="left">
                 <div id="imgbox">
-                    <img src="pic/pricetrue.png" style="width: 600px;">
+                    <img src="pic/map.jpg" style="width:80%;">
                 </div>
 
                 <div class="news_words" style="padding-top: 3%;">
-                    <h2>Trump health secretary to repay cost of private<br>jet travel.</h2>
-                    <p>Washington media outlet Politico reported that Price had taken at least two dozen private charter flights since May at a cost to U.S. taxpayers of more than $400,000.<br>Health and Human Services Secretary Tom Price will reimburse taxpayers just under $52,000 for the cost of his charter jet travels for official government business, which is estimated at more than $400,000.<br><a href="http://thehill.com/policy/healthcare/352987-price-to-pay-52k-out-of-estimated-400k-in-travel-costs">Source</a></p>
+                    <h2>xxxxxxxx - xxxxxxxxxxxxxxxxxxx</h2>
+                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
                 </div>
             </div>
-            
-            <div id="right">
+
+            <div class="col-md-4" id="right">
                 <div id="list"></div>
                 <!--<ul id="list"></ul>-->
                 <div id=post>
-                    <textarea id="text" disabled="disabled"></textarea>
-                    <input id="postBt" type="button" value="Send"  disabled="disabled"/>
+                    <textarea id="text"></textarea>
+                    <input id="postBt" type="button" value="Send" />
                     <!--<input id="clearBt" type="button" value="Clear"/>-->
                 </div>
             </div>
         </div>
+
     </div>
+
+    <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js "></script>
 </body>
 
 </html>
